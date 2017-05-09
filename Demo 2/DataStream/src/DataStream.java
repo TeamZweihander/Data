@@ -1,3 +1,6 @@
+
+import org.json.JSONArray;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -28,6 +31,16 @@ public class DataStream {
             float longitude = 0;
             float latitude = 0;
             float altitude = 0;
+          
+            //get the address 
+            JSONArray mainArray = dirtyData.getJSONArray("Location_result");
+            org.json.JSONObject position  = mainArray.getJSONObject(0);
+            org.json.JSONObject location = position.getJSONObject("msg");
+            org.json.JSONObject address = location.getJSONObject("sta_eth_mac");
+            
+           
+            
+            
             
         }
         catch(Exception e)
