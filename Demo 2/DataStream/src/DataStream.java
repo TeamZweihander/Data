@@ -17,8 +17,25 @@ public class DataStream {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    public String sanitization(String json){
-        return "";
-    }
+    public org.json.JSONObject sanitization(String json){
+       
+        org.json.JSONObject cleanData = null;
+        org.json.JSONObject dirtyData = null;
+        
+        try{
+            dirtyData = new org.json.JSONObject(json);
+            
+            float longitude = 0;
+            float latitude = 0;
+            float altitude = 0;
+            
+        }
+        catch(Exception e)
+        {
+     
+        }
+        return cleanData;
+        
     
+}
 }
