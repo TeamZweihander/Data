@@ -8,6 +8,7 @@
  *
  * @author xoliswa.ntshingila,diana.obo,martha.mohlala ,mark.klingenberg
  */
+
 public class DataStream {
 
     /**
@@ -15,6 +16,9 @@ public class DataStream {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+    }
+    public String sanitization(String json){
+        return "";
     }
     
 }
