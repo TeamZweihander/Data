@@ -20,11 +20,11 @@ public class DataStream {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    public org.json.JSONObject sanitization(String json){
+    public String sanitization(String json){
        
         org.json.JSONObject cleanData = null;
         org.json.JSONObject dirtyData = null;
-        
+        String data = "";
         try{
             dirtyData = new org.json.JSONObject(json);
             
@@ -39,25 +39,22 @@ public class DataStream {
             org.json.JSONObject address = location.getJSONObject("sta_eth_mac");
             
             //getting the longitude,latitude and altitude of the device
-            longitude = location.getLong("longitude");
-            latitude = location.getLong("latitude");
-            altitude = location.getLong("altitude");
+//            longitude = location.getLong("longitude");
+//            latitude = location.getLong("latitude");
+//            altitude = location.getLong("altitude");
            
-            String data = "";
             data += "{\n  \"Location\": {\n";
             data += "      \"longitude\": \"" + longitude + "\",\n";
-            data += "      \"latitude\": \"" + latitude + "\",\n";
-            data += "      \"altitude\": \"" + altitude + "\",\n";
-            data += "  }\n}";
+            data += "  }\n}" ;
             
-            cleanData = new org.json.JSONObject(data);
+            //cleanData = new org.json.JSONObject(data);
             
         }
         catch(Exception e)
         {
             System.out.println("JSON object error");
         }
-        return cleanData;
+        return data;
         
     
 }
